@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Refer & Earn | Game Streak Esports</title>
+<meta name="description" content="Refer friends and earn rewards in Game Streak Esports BGMI tournaments. Join, play and win real rewards.">
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui;
+}
+
+body{
+  background:#070a12;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+body::before{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle,#3b82f6,#9333ea,#facc15,transparent);
+  filter:blur(120px);
+  opacity:0.5;
+  top:10%;
+  left:10%;
+  animation:float1 8s infinite alternate;
+  z-index:-1;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle,#22c55e,#3b82f6,#9333ea,transparent);
+  filter:blur(120px);
+  opacity:0.4;
+  bottom:10%;
+  right:10%;
+  animation:float2 10s infinite alternate;
+  z-index:-1;
+}
+
+@keyframes float1{
+  0%{transform:translate(0,0);}
+  100%{transform:translate(50px,-40px);}
+}
+
+@keyframes float2{
+  0%{transform:translate(0,0);}
+  100%{transform:translate(-50px,40px);}
+}
+
+/* =========================
+   HEADER
+========================= */
+header{
+  position:sticky;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 18px;
+  background:rgba(11,18,32,0.7);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:999;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{
+  width:32px;
+  animation:floatLogo 3s ease-in-out infinite;
+}
+
+.logo span{
+  font-size:18px;
+  font-weight:900;
+  background:linear-gradient(90deg,#60a5fa,#a78bfa,#facc15,#60a5fa);
+  background-size:300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:logoFlow 4s linear infinite;
+}
+
+@keyframes logoFlow{
+  0%{background-position:0%;}
+  100%{background-position:300%;}
+}
+
+@keyframes floatLogo{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-5px);}
+  100%{transform:translateY(0);}
+}
+
+/* NAV */
+nav a{
+  color:#cbd5e1;
+  text-decoration:none;
+  margin-left:12px;
+  font-size:13px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#60a5fa;
+}
+
+/* =========================
+   LOGO STRIP
+========================= */
+.logo-strip{
+  display:flex;
+  justify-content:center;
+  padding:10px;
+  background:rgba(255,255,255,0.03);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo-strip img{
+  width:80px;
+  animation:floatLogo 3s ease-in-out infinite;
+  filter:drop-shadow(0 0 10px rgba(59,130,246,0.5));
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+  text-align:center;
+  margin-top:20px;
+}
+
+.hero h1{
+  font-size:28px;
+  font-weight:900;
+  background:linear-gradient(90deg,#60a5fa,#a78bfa,#facc15,#60a5fa);
+  background-size:300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:logoFlow 4s linear infinite;
+  text-transform:uppercase;
+}
+
+.hero p{
+  font-size:14px;
+  color:#cbd5e1;
+  margin-top:10px;
+  line-height:1.6;
+}
+
+/* =========================
+   REFER BOX
+========================= */
+.box{
+  margin-top:25px;
+  padding:18px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  position:relative;
+  overflow:hidden;
+}
+
+.box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,#3b82f6,#9333ea,#facc15,#3b82f6);
+  background-size:300%;
+  animation:borderMove 5s linear infinite;
+  opacity:0.15;
+  pointer-events:none;
+  z-index:0;
+}
+
+@keyframes borderMove{
+  0%{background-position:0%;}
+  100%{background-position:300%;}
+}
+
+.box h2{
+  font-size:16px;
+  color:#60a5fa;
+  margin-bottom:10px;
+  position:relative;
+}
+
+.box p{
+  font-size:13px;
+  color:#cbd5e1;
+  line-height:1.6;
+  position:relative;
+}
+
+/* STEPS */
+.steps{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:15px;
+  position:relative;
+}
+
+.step{
+  background:#0b1220;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #1f2937;
+}
+
+.step b{
+  color:#facc15;
+  font-size:11px;
+}
+
+.step span{
+  display:block;
+  margin-top:5px;
+  font-size:13px;
+  color:#e2e8f0;
+}
+
+/* BUTTON */
+.btn{
+  display:block;
+  margin-top:15px;
+  text-align:center;
+  padding:12px;
+  border-radius:12px;
+  font-weight:900;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(270deg,#3b82f6,#9333ea,#facc15,#3b82f6);
+  background-size:300%;
+  animation:btnFlow 4s linear infinite;
+}
+
+@keyframes btnFlow{
+  0%{background-position:0%;}
+  100%{background-position:300%;}
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+  margin-top:40px;
+  padding:25px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,0.08);
+  color:#94a3b8;
+  font-size:12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hero h1{
+    font-size:22px;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  nav{
+    display:none;
+  }
+}
+
+/* =========================
+
+   IMAGE GALLERY SECTION
+
+========================= */
+
+.gallery-title{
+
+  text-align:center;
+
+  margin:25px 0 15px;
+
+  font-size:18px;
+
+  font-weight:900;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  color:#60a5fa;
+
+}
+
+/* GRID */
+
+.gallery{
+
+  display:grid;
+
+  grid-template-columns:repeat(5,1fr);
+
+  gap:12px;
+
+  padding:10px;
+
+  max-width:1100px;
+
+  margin:auto;
+
+}
+
+/* CARD */
+
+.img-box{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:14px;
+
+  background:#0b1220;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  aspect-ratio:1/1;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+}
+
+/* IMAGE */
+
+.img-box img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:0.4s ease;
+
+}
+
+/* HOVER EFFECT */
+
+.img-box:hover img{
+
+  transform:scale(1.1);
+
+  filter:brightness(1.2);
+
+}
+
+.img-box:hover{
+
+  transform:translateY(-5px);
+
+  box-shadow:0 10px 25px rgba(59,130,246,0.25);
+
+}
+
+/* GLASS OVERLAY */
+
+.img-box::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));
+
+  z-index:1;
+
+}
+
+/* TEXT TAG */
+
+.img-box span{
+
+  position:absolute;
+
+  bottom:8px;
+
+  left:8px;
+
+  font-size:11px;
+
+  color:#fff;
+
+  z-index:2;
+
+  background:rgba(0,0,0,0.5);
+
+  padding:4px 8px;
+
+  border-radius:6px;
+
+  backdrop-filter:blur(6px);
+
+}
+
+/* =========================
+
+   RESPONSIVE
+
+========================= */
+
+@media(max-width:1000px){
+
+  .gallery{
+
+    grid-template-columns:repeat(3,1fr);
+
+  }
+
+}
+
+@media(max-width:600px){
+
+  .gallery{
+
+    grid-template-columns:repeat(2,1fr);
+
+  }
+
+}
+
+@media(max-width:400px){
+
+  .gallery{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+  <div class="logo">
+    <img src="2C.webp" alt="logo">
+    <span>Game Streak</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tournament.html">Tournament</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+</header>
+
+<!-- LOGO STRIP -->
+<div class="logo-strip">
+  <img src="2C.webp" alt="logo">
+</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>REFER & EARN SYSTEM</h1>
+    <p>Invite friends, join BGMI tournaments and earn rewards instantly. Build your esports network and grow together.</p>
+  </div>
+
+  <!-- BOX -->
+  <div class="box">
+
+    <h2>HOW IT WORKS</h2>
+
+    <p>
+      Play online tournaments on Game Streak Esports. Complete simple steps and earn referral rewards for every active player you bring.
+    </p>
+
+    <div class="steps">
+
+      <div class="step">
+        <b>STEP 1</b>
+        <span>Click REFER & EARN button</span>
+      </div>
+
+      <div class="step">
+        <b>STEP 2</b>
+        <span>Login / Register account</span>
+      </div>
+
+      <div class="step">
+        <b>STEP 3</b>
+        <span>Copy referral code</span>
+      </div>
+
+      <div class="step">
+        <b>STEP 4</b>
+        <span>Share & earn rewards</span>
+      </div>
+
+    </div>
+
+    <a href="https://game-hub-theshogenex.replit.app/login" class="btn"> REFER & EARN </a>
+
+  </div>
+
+</div>
+
+<!-- =========================
+
+   TITLE
+
+========================= -->
+
+<div class="gallery-title">
+
+  GAME STREAK TOURNAMENT GALLERY
+
+</div>
+
+<!-- =========================
+
+   GALLERY GRID (10 BOXES)
+
+========================= -->
+
+<div class="gallery">
+
+  <div class="img-box">
+
+    <img src="B1.jpeg" alt="BGMI">
+
+    <span>Creat Account</span>
+
+  </div>
+
+  <div class="img-box">
+
+    <img src="B2.jpeg" alt="BGMI">
+
+    <span>Choose refer</span>
+
+  </div>
+
+  <div class="img-box">
+
+    <img src="B3.jpeg" alt="BGMI">
+
+    <span>Copy link</span>
+
+  </div>
+
+  <div class="img-box">
+
+    <img src="B4.jpeg" alt="BGMI">
+
+    <span>Share & Earn</span>
+
+  </div>
+
+  <div class="img-box">
+
+    <img src="B5.jpeg" alt="BGMI">
+
+    <span>Withdraw</span>
+
+  </div>
+
+  <div class="img-box">
+
+    <img src="2C.webp" alt="BGMI">
+
+    <span>#</span>
+
+  </div>
+
+  <div class="img-box">
+
+    <img src="2C.webp" alt="BGMI">
+
+    <span>#</span>
+
+  </div>
+
+  <div class="img-box">
+
+    <img src="2C.webp" alt="BGMI">
+
+    <span>#</span>
+
+  </div>
+
+  <div class="img-box">
+
+    <img src="2C.webp" alt="BGMI">
+
+    <span>#</span>
+
+  </div>
+
+  <div class="img-box">
+
+    <img src="2C.webp" alt="BGMI">
+
+    <span>#</span>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Game Streak Esports | All Rights Reserved | BGMI Community Platform
+</footer>
+
+</body>
+</html>

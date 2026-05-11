@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Privacy Policy | Game Streak Esports</title>
+
+<meta name="description" content="Read the official Privacy Policy of Game Streak Esports. Learn how we collect, use and protect user data for BGMI tournaments and esports services.">
+
+<meta name="keywords" content="Game Streak privacy policy, BGMI esports privacy, gaming website privacy policy, esports platform policy">
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#070a12;
+  color:white;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle,#3b82f6,#9333ea,#facc15,transparent);
+  filter:blur(120px);
+  opacity:0.35;
+  top:-10%;
+  left:-10%;
+  animation:floatOne 10s infinite alternate;
+  z-index:-2;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:450px;
+  height:450px;
+  background:radial-gradient(circle,#22c55e,#3b82f6,#9333ea,transparent);
+  filter:blur(120px);
+  opacity:0.30;
+  bottom:-10%;
+  right:-10%;
+  animation:floatTwo 12s infinite alternate;
+  z-index:-2;
+}
+
+@keyframes floatOne{
+  0%{
+    transform:translate(0,0);
+  }
+  100%{
+    transform:translate(60px,-40px);
+  }
+}
+
+@keyframes floatTwo{
+  0%{
+    transform:translate(0,0);
+  }
+  100%{
+    transform:translate(-50px,40px);
+  }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.glow-header{
+  position:sticky;
+  top:0;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 20px;
+  background:rgba(11,18,32,0.75);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:999;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:1px;
+
+  background:linear-gradient(
+  90deg,
+  #60a5fa,
+  #a78bfa,
+  #facc15,
+  #60a5fa
+  );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:logoFlow 5s linear infinite;
+}
+
+@keyframes logoFlow{
+  0%{
+    background-position:0%;
+  }
+  100%{
+    background-position:300%;
+  }
+}
+
+/* =========================
+   JOIN BUTTON
+========================= */
+
+.join-btn{
+  text-decoration:none;
+  color:white;
+  font-size:13px;
+  font-weight:900;
+  padding:12px 22px;
+  border-radius:40px;
+
+  background:linear-gradient(
+  270deg,
+  #3b82f6,
+  #9333ea,
+  #facc15,
+  #3b82f6
+  );
+
+  background-size:300%;
+
+  animation:btnMove 5s linear infinite;
+
+  position:relative;
+  overflow:hidden;
+
+  box-shadow:
+  0 0 20px rgba(59,130,246,0.35);
+
+  transition:0.3s;
+}
+
+.join-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-60%;
+  width:50%;
+  height:100%;
+  background:rgba(255,255,255,0.25);
+  transform:skewX(-25deg);
+  transition:0.5s;
+}
+
+.join-btn:hover::before{
+  left:120%;
+}
+
+.join-btn:hover{
+  transform:translateY(-2px) scale(1.03);
+}
+
+@keyframes btnMove{
+  0%{
+    background-position:0%;
+  }
+  100%{
+    background-position:300%;
+  }
+}
+
+/* =========================
+   LOGO SECTION
+========================= */
+
+.logo-section{
+  text-align:center;
+  padding:35px 20px 15px;
+}
+
+.logo-section img{
+  width:180px;
+  max-width:75%;
+
+  filter:drop-shadow(
+  0 0 25px rgba(59,130,246,0.45)
+  );
+
+  animation:logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  text-align:center;
+  padding:10px 20px 30px;
+}
+
+.hero h1{
+  font-size:42px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:2px;
+
+  background:linear-gradient(
+  90deg,
+  #60a5fa,
+  #a78bfa,
+  #facc15,
+  #60a5fa
+  );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:titleMove 5s linear infinite;
+}
+
+.hero p{
+  margin-top:12px;
+  font-size:15px;
+  line-height:1.8;
+  color:#cbd5e1;
+}
+
+@keyframes titleMove{
+  0%{
+    background-position:0%;
+  }
+  100%{
+    background-position:300%;
+  }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+  width:100%;
+  max-width:950px;
+  margin:auto;
+  padding:20px;
+}
+
+/* =========================
+   POLICY BOX
+========================= */
+
+.policy-box{
+  position:relative;
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(11,18,32,0.95),
+  rgba(15,23,42,0.95)
+  );
+
+  border-radius:22px;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  padding:28px;
+}
+
+.policy-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  padding:1px;
+
+  border-radius:22px;
+
+  background:linear-gradient(
+  90deg,
+  #3b82f6,
+  #9333ea,
+  #facc15,
+  #22c55e,
+  #3b82f6
+  );
+
+  background-size:300%;
+
+  animation:borderFlow 6s linear infinite;
+
+  -webkit-mask:
+  linear-gradient(#000 0 0) content-box,
+  linear-gradient(#000 0 0);
+
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+}
+
+@keyframes borderFlow{
+  0%{
+    background-position:0%;
+  }
+  100%{
+    background-position:300%;
+  }
+}
+
+/* =========================
+   POLICY SECTION
+========================= */
+
+.policy-section{
+  position:relative;
+  z-index:1;
+  margin-bottom:28px;
+}
+
+.policy-section h2{
+  color:#60a5fa;
+  margin-bottom:12px;
+  font-size:22px;
+}
+
+.policy-section p{
+  color:#cbd5e1;
+  line-height:1.9;
+  font-size:14px;
+}
+
+.policy-section ul{
+  margin-top:14px;
+  padding-left:18px;
+}
+
+.policy-section ul li{
+  color:#e2e8f0;
+  line-height:1.8;
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+/* =========================
+   HIGHLIGHT BOX
+========================= */
+
+.highlight-box{
+  position:relative;
+  overflow:hidden;
+
+  margin-top:20px;
+
+  background:#0f172a;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:18px;
+
+  padding:22px;
+}
+
+.highlight-box::before{
+  content:"";
+  position:absolute;
+  width:240px;
+  height:240px;
+
+  background:
+  radial-gradient(circle,#3b82f6,transparent);
+
+  top:-100px;
+  left:-80px;
+
+  opacity:0.22;
+
+  animation:rotateGlow 8s linear infinite;
+}
+
+.highlight-box::after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+
+  background:
+  radial-gradient(circle,#9333ea,transparent);
+
+  bottom:-100px;
+  right:-80px;
+
+  opacity:0.20;
+
+  animation:rotateGlowReverse 10s linear infinite;
+}
+
+@keyframes rotateGlow{
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes rotateGlowReverse{
+  0%{
+    transform:rotate(360deg);
+  }
+  100%{
+    transform:rotate(0deg);
+  }
+}
+
+.highlight-box h3{
+  position:relative;
+  z-index:1;
+
+  color:#facc15;
+
+  margin-bottom:10px;
+}
+
+.highlight-box p{
+  position:relative;
+  z-index:1;
+
+  color:#cbd5e1;
+
+  line-height:1.8;
+  font-size:14px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer{
+  margin-top:50px;
+
+  background:#0b1220;
+
+  border-top:1px solid rgba(255,255,255,0.08);
+
+  padding:40px 20px;
+}
+
+.footer-wrapper{
+  width:100%;
+  max-width:1100px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:25px;
+}
+
+.footer-box h3{
+  color:#60a5fa;
+  margin-bottom:12px;
+}
+
+.footer-box p,
+.footer-box a{
+  color:#cbd5e1;
+  font-size:13px;
+  line-height:1.8;
+  text-decoration:none;
+}
+
+.footer-box a:hover{
+  color:#60a5fa;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:28px;
+  }
+
+  .policy-box{
+    padding:20px;
+  }
+
+  .policy-section h2{
+    font-size:18px;
+  }
+
+  .policy-section p,
+  .policy-section ul li{
+    font-size:13px;
+  }
+
+  .footer-wrapper{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="glow-header">
+
+  <div class="logo">
+    Game Streak Esports
+  </div>
+
+  <a href="https://discord.gg/Da2RwjEtbj" class="join-btn">
+    JOIN NOW
+  </a>
+
+</header>
+
+<!-- LOGO -->
+
+<section class="logo-section">
+
+  <img src="2C.webp" alt="Game Streak Esports Logo">
+
+</section>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <h1>Privacy Policy</h1>
+
+  <p>
+    Learn how Game Streak Esports collects, uses and protects user information
+    for BGMI tournaments, esports events and gaming community services.
+  </p>
+
+</section>
+
+<!-- MAIN -->
+
+<div class="container">
+
+  <div class="policy-box">
+
+    <div class="policy-section">
+
+      <h2>Information We Collect</h2>
+
+      <p>
+        Game Streak Esports may collect user information such as player name,
+        email address, gaming ID, Discord username and tournament registration
+        details to improve esports services and tournament management.
+      </p>
+
+    </div>
+
+    <div class="policy-section">
+
+      <h2>How We Use Your Information</h2>
+
+      <ul>
+
+        <li>Manage BGMI tournament registrations and participation</li>
+
+        <li>Send esports event updates and announcements</li>
+
+        <li>Improve website performance and gaming experience</li>
+
+        <li>Provide customer support and tournament assistance</li>
+
+        <li>Prevent cheating, fraud and unfair gaming activity</li>
+
+      </ul>
+
+    </div>
+
+    <div class="policy-section">
+
+      <h2>Data Protection</h2>
+
+      <p>
+        We use secure methods to protect user information and prevent
+        unauthorized access, misuse or disclosure of personal data.
+        Game Streak Esports does not sell private user information
+        to third parties.
+      </p>
+
+    </div>
+
+    <div class="policy-section">
+
+      <h2>Cookies & Analytics</h2>
+
+      <p>
+        Our website may use cookies and analytics tools to improve
+        user experience, monitor traffic and optimize esports content
+        and tournament services.
+      </p>
+
+    </div>
+
+    <div class="policy-section">
+
+      <h2>Third-Party Services</h2>
+
+      <p>
+        Game Streak Esports may use third-party services such as Discord,
+        Google Forms, payment gateways or tournament tools for esports
+        operations and community management.
+      </p>
+
+    </div>
+
+    <div class="policy-section">
+
+      <h2>User Responsibility</h2>
+
+      <p>
+        Users are responsible for maintaining account security and
+        providing accurate information during tournament registration
+        and community participation.
+      </p>
+
+    </div>
+
+    <div class="highlight-box">
+
+      <h3>Important Notice</h3>
+
+      <p>
+        By using Game Streak Esports services, tournaments and website,
+        you agree to the terms mentioned in this Privacy Policy.
+        Continued use of the platform indicates acceptance of these policies.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+  <div class="footer-wrapper">
+
+    <div class="footer-box">
+
+      <h3>Game Streak</h3>
+
+      <p>
+        Competitive BGMI esports platform for mobile gamers across India.
+      </p>
+
+    </div>
+
+    <div class="footer-box">
+
+      <h3>Quick Links</h3>
+
+      <a href="#">Home</a><br>
+      <a href="#">Tournament</a><br>
+      <a href="#">Refer & Earn</a><br>
+      <a href="#">About</a><br>
+      <a href="#">Contact</a>
+
+    </div>
+
+    <div class="footer-box">
+
+      <h3>Support</h3>
+
+      <p>Email: theshogenex@gmail.com</p>
+
+      <p>Discord Support Available</p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Game Streak Esports</title>
+
+<meta name="description" content="Contact Game Streak Esports for BGMI tournaments, support, registration help, partnership and gaming community assistance.">
+
+<meta name="keywords" content="BGMI esports contact, Game Streak support, BGMI tournaments India, esports gaming support">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#070a12;
+  color:white;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle,#3b82f6,#9333ea,#facc15,transparent);
+  filter:blur(120px);
+  opacity:0.35;
+  top:-10%;
+  left:-10%;
+  animation:floatOne 10s infinite alternate;
+  z-index:-2;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:450px;
+  height:450px;
+  background:radial-gradient(circle,#22c55e,#3b82f6,#9333ea,transparent);
+  filter:blur(120px);
+  opacity:0.30;
+  bottom:-10%;
+  right:-10%;
+  animation:floatTwo 12s infinite alternate;
+  z-index:-2;
+}
+
+@keyframes floatOne{
+  0%{
+    transform:translate(0,0);
+  }
+  100%{
+    transform:translate(60px,-40px);
+  }
+}
+
+@keyframes floatTwo{
+  0%{
+    transform:translate(0,0);
+  }
+  100%{
+    transform:translate(-50px,40px);
+  }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.glow-header{
+  position:sticky;
+  top:0;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 20px;
+  background:rgba(11,18,32,0.75);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:999;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:1px;
+
+  background:linear-gradient(
+  90deg,
+  #60a5fa,
+  #a78bfa,
+  #facc15,
+  #60a5fa
+  );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:logoFlow 5s linear infinite;
+}
+
+@keyframes logoFlow{
+  0%{
+    background-position:0%;
+  }
+  100%{
+    background-position:300%;
+  }
+}
+
+/* =========================
+   JOIN BUTTON
+========================= */
+
+.join-btn{
+  text-decoration:none;
+  color:white;
+  font-size:13px;
+  font-weight:900;
+  padding:12px 22px;
+  border-radius:40px;
+
+  background:linear-gradient(
+  270deg,
+  #3b82f6,
+  #9333ea,
+  #facc15,
+  #3b82f6
+  );
+
+  background-size:300%;
+
+  animation:btnMove 5s linear infinite;
+
+  position:relative;
+  overflow:hidden;
+
+  box-shadow:
+  0 0 20px rgba(59,130,246,0.35);
+
+  transition:0.3s;
+}
+
+.join-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-60%;
+  width:50%;
+  height:100%;
+  background:rgba(255,255,255,0.25);
+  transform:skewX(-25deg);
+  transition:0.5s;
+}
+
+.join-btn:hover::before{
+  left:120%;
+}
+
+.join-btn:hover{
+  transform:translateY(-2px) scale(1.03);
+}
+
+@keyframes btnMove{
+  0%{
+    background-position:0%;
+  }
+  100%{
+    background-position:300%;
+  }
+}
+
+/* =========================
+   LOGO SECTION
+========================= */
+
+.logo-section{
+  padding:35px 20px 15px;
+  text-align:center;
+}
+
+.logo-section img{
+  width:180px;
+  max-width:75%;
+
+  filter:drop-shadow(
+  0 0 25px rgba(59,130,246,0.5)
+  );
+
+  animation:logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+  0%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.hero-title{
+  text-align:center;
+  padding:10px 20px 25px;
+}
+
+.hero-title h1{
+  font-size:40px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:2px;
+
+  background:linear-gradient(
+  90deg,
+  #60a5fa,
+  #a78bfa,
+  #facc15,
+  #60a5fa
+  );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:titleMove 5s linear infinite;
+}
+
+.hero-title p{
+  margin-top:12px;
+  color:#cbd5e1;
+  font-size:15px;
+  line-height:1.7;
+}
+
+@keyframes titleMove{
+  0%{
+    background-position:0%;
+  }
+  100%{
+    background-position:300%;
+  }
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+  width:100%;
+  max-width:850px;
+  margin:auto;
+  padding:20px;
+}
+
+/* =========================
+   CONTACT BOX
+========================= */
+
+.contact-box{
+  position:relative;
+  overflow:hidden;
+
+  padding:25px;
+  border-radius:22px;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(11,18,32,0.95),
+  rgba(15,23,42,0.95)
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(14px);
+}
+
+.contact-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  padding:1px;
+
+  border-radius:22px;
+
+  background:linear-gradient(
+  90deg,
+  #3b82f6,
+  #9333ea,
+  #facc15,
+  #22c55e,
+  #3b82f6
+  );
+
+  background-size:300%;
+
+  animation:borderFlow 6s linear infinite;
+
+  -webkit-mask:
+  linear-gradient(#000 0 0) content-box,
+  linear-gradient(#000 0 0);
+
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+}
+
+@keyframes borderFlow{
+  0%{
+    background-position:0%;
+  }
+  100%{
+    background-position:300%;
+  }
+}
+
+.contact-box h2{
+  text-align:center;
+  font-size:24px;
+  margin-bottom:12px;
+  color:#60a5fa;
+  position:relative;
+  z-index:1;
+}
+
+.contact-box p{
+  text-align:center;
+  color:#cbd5e1;
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:25px;
+  position:relative;
+  z-index:1;
+}
+
+/* =========================
+   FORM
+========================= */
+
+form{
+  position:relative;
+  z-index:1;
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group input,
+.form-group textarea{
+  width:100%;
+  border:none;
+  outline:none;
+
+  background:#0b1220;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:14px;
+
+  padding:15px;
+
+  color:white;
+
+  font-size:14px;
+
+  transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+  border-color:#3b82f6;
+
+  box-shadow:
+  0 0 20px rgba(59,130,246,0.25);
+}
+
+.form-group textarea{
+  min-height:140px;
+  resize:none;
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.submit-btn{
+  width:100%;
+  border:none;
+  cursor:pointer;
+
+  padding:16px;
+
+  border-radius:14px;
+
+  color:white;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:1px;
+
+  background:linear-gradient(
+  270deg,
+  #3b82f6,
+  #9333ea,
+  #facc15,
+  #3b82f6
+  );
+
+  background-size:300%;
+
+  animation:btnMove 5s linear infinite;
+
+  transition:0.3s;
+}
+
+.submit-btn:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+  0 10px 30px rgba(59,130,246,0.35);
+}
+
+/* =========================
+   CONTACT INFO
+========================= */
+
+.contact-info{
+  margin-top:28px;
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:15px;
+}
+
+.info-card{
+  background:#0b1220;
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:16px;
+
+  padding:18px;
+
+  text-align:center;
+
+  transition:0.3s;
+}
+
+.info-card:hover{
+  transform:translateY(-5px);
+
+  border-color:#3b82f6;
+}
+
+.info-card h3{
+  color:#60a5fa;
+  margin-bottom:8px;
+  font-size:15px;
+}
+
+.info-card p{
+  color:#cbd5e1;
+  font-size:13px;
+  line-height:1.6;
+}
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer{
+  margin-top:30px;
+
+  position:relative;
+  overflow:hidden;
+
+  background:#0f172a;
+
+  border-radius:18px;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  padding:22px;
+}
+
+.disclaimer::before{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+
+  background:
+  radial-gradient(circle,#3b82f6,transparent);
+
+  top:-100px;
+  left:-80px;
+
+  opacity:0.25;
+
+  animation:rotateGlow 8s linear infinite;
+}
+
+.disclaimer::after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+
+  background:
+  radial-gradient(circle,#9333ea,transparent);
+
+  bottom:-100px;
+  right:-80px;
+
+  opacity:0.20;
+
+  animation:rotateGlowReverse 10s linear infinite;
+}
+
+@keyframes rotateGlow{
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes rotateGlowReverse{
+  0%{
+    transform:rotate(360deg);
+  }
+  100%{
+    transform:rotate(0deg);
+  }
+}
+
+.disclaimer h3{
+  position:relative;
+  z-index:1;
+
+  color:#facc15;
+
+  margin-bottom:10px;
+}
+
+.disclaimer p{
+  position:relative;
+  z-index:1;
+
+  color:#cbd5e1;
+
+  font-size:13px;
+  line-height:1.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer{
+  margin-top:45px;
+
+  background:#0b1220;
+
+  border-top:1px solid rgba(255,255,255,0.08);
+
+  padding:40px 20px;
+}
+
+.footer-wrapper{
+  width:100%;
+  max-width:1100px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:25px;
+}
+
+.footer-box h3{
+  color:#60a5fa;
+  margin-bottom:12px;
+}
+
+.footer-box p,
+.footer-box a{
+  color:#cbd5e1;
+  font-size:13px;
+  line-height:1.8;
+  text-decoration:none;
+}
+
+.footer-box a:hover{
+  color:#60a5fa;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .hero-title h1{
+    font-size:28px;
+  }
+
+  .contact-info{
+    grid-template-columns:1fr;
+  }
+
+  .footer-wrapper{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .join-btn{
+    padding:10px 18px;
+    font-size:12px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="glow-header">
+
+  <div class="logo">
+    Game Streak Esports
+  </div>
+
+  <a href="https://discord.gg/Da2RwjEtbj" class="join-btn">
+    JOIN NOW
+  </a>
+
+</header>
+
+<!-- LOGO -->
+
+<section class="logo-section">
+
+  <img src="2C.webp" alt="Game Streak Esports Logo">
+
+</section>
+
+<!-- TITLE -->
+
+<section class="hero-title">
+
+  <h1>Contact Game Streak</h1>
+
+  <p>
+    Contact our BGMI esports support team for tournament registration,
+    gaming support, partnership, sponsorship and community assistance.
+  </p>
+
+</section>
+
+<!-- MAIN -->
+
+<div class="container">
+
+  <div class="contact-box">
+
+    <h2>Send Us A Message</h2>
+
+    <p>
+      Have questions about tournaments, registration, rewards or esports events?
+      Fill out the form below and our team will respond as soon as possible.
+    </p>
+
+    <!-- FORM -->
+
+    <form action="https://formsubmit.co/theshogenex@gmail.com" method="POST">
+
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="hidden" name="_subject" value="New Message From Game Streak Website">
+
+      <!-- NAME -->
+
+      <div class="form-group">
+
+        <input
+        type="text"
+        name="name"
+        placeholder="Enter Your Name"
+        required>
+
+      </div>
+
+      <!-- EMAIL -->
+
+      <div class="form-group">
+
+        <input
+        type="email"
+        name="email"
+        placeholder="Enter Your Email"
+        required>
+
+      </div>
+
+      <!-- SUBJECT -->
+
+      <div class="form-group">
+
+        <input
+        type="text"
+        name="subject"
+        placeholder="Tournament / Subject"
+        required>
+
+      </div>
+
+      <!-- MESSAGE -->
+
+      <div class="form-group">
+
+        <textarea
+        name="message"
+        placeholder="Write your message here..."
+        required></textarea>
+
+      </div>
+
+      <!-- BUTTON -->
+
+      <button type="submit" class="submit-btn">
+        SEND MESSAGE
+      </button>
+
+    </form>
+
+    <!-- CONTACT INFO -->
+
+    <div class="contact-info">
+
+      <div class="info-card">
+
+        <h3>Join Discord</h3>
+
+        <p>
+          Click on Join Now button
+        </p>
+
+      </div>
+
+      <div class="info-card">
+
+        <h3>Discord Support</h3>
+
+        <p>
+          Available 24/7 for tournament help
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- DISCLAIMER -->
+
+  <div class="disclaimer">
+
+    <h3>Disclaimer</h3>
+
+    <p>
+      Game Streak Esports is an independent gaming and esports community platform.
+      We are not affiliated with Krafton or BGMI official developers.
+      All tournaments and gaming events are organized for entertainment,
+      community competition and esports engagement purposes only.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+  <div class="footer-wrapper">
+
+    <div class="footer-box">
+
+      <h3>Game Streak</h3>
+
+      <p>
+        Competitive BGMI esports platform for mobile gamers across India.
+      </p>
+
+    </div>
+
+    <div class="footer-box">
+
+      <h3>Quick Links</h3>
+
+      <a href="index.html">Home</a><br>
+      <a href="tournament.html">Tournament</a><br>
+      <a href="R&F.html">Refer & Earn</a><br>
+      <a href="about.html">About</a><br>
+      <a href="contact.html">Contact</a>
+
+    </div>
+
+    <div class="footer-box">
+
+      <h3>Support</h3>
+
+      <p>Join : Discord</p>
+
+      <p>Discord Support Available</p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
